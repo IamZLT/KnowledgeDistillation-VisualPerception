@@ -1,6 +1,6 @@
 # Visual Grounding&知识蒸馏研究梳理
 
-本仓库收集了Visual Grounding领域结合知识蒸馏技术的一些重要研究论文。论文附有官方链接或DOI，开源项目则会加入代码链接。
+本仓库收集了Visual Grounding领域结合知识蒸馏技术的一些研究论文。论文附有官方链接或DOI，开源项目则会加入代码链接。
 
 ## 目录
 - [2025年论文](#2025)
@@ -12,9 +12,9 @@
 ## 2025
 
 - **Dynamic-LLaVA: Efficient Multimodal Large Language Models via Dynamic Vision-Language Context Sparsification** (ICLR 2025)
- - [论文链接](https://arxiv.org/pdf/2412.00876)
-  - 创新性提出多模态大语言模型动态视觉-语言上下文稀疏化框架，通过在预填充和解码阶段动态减少视觉和语言上下文的冗余标记，显著降低计算消耗和GPU内存开销
-  - 设计了针对不同推理模式的稀疏化推理方案，使用可学习的预测器为图像和输出文本标记生成二进制掩码，通过端到端训练确保模型性能不受影响
+    - [论文链接](https://arxiv.org/pdf/2412.00876)
+    - 创新性提出多模态大语言模型动态视觉-语言上下文稀疏化框架，通过在预填充和解码阶段动态减少视觉和语言上下文的冗余标记，显著降低计算消耗和GPU内存开销
+    - 设计了针对不同推理模式的稀疏化推理方案，使用可学习的预测器为图像和输出文本标记生成二进制掩码，通过端到端训练确保模型性能不受影响
 
 - **Align-KD: Distilling Cross-Modal Alignment Knowledge for Mobile VLM** (CVPR 2025) 
   - [论文链接](https://cvpr.thecvf.com/virtual/2025/poster/33163)
