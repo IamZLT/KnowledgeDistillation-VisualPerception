@@ -13,6 +13,7 @@
 
 - **Dynamic-LLaVA: Efficient Multimodal Large Language Models via Dynamic Vision-Language Context Sparsification** (ICLR 2025)
     - [论文链接](https://arxiv.org/pdf/2412.00876)
+    - [开源项目链接](https://github.com/microsoft/Dynamic-LLaVA)
     - 创新性提出多模态大语言模型动态视觉-语言上下文稀疏化框架，通过在预填充和解码阶段动态减少视觉和语言上下文的冗余标记，显著降低计算消耗和GPU内存开销
     - 设计了针对不同推理模式的稀疏化推理方案，使用可学习的预测器为图像和输出文本标记生成二进制掩码，通过端到端训练确保模型性能不受影响
 
