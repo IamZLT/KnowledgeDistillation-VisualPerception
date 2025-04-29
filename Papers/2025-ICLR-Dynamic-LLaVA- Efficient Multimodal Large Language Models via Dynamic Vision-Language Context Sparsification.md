@@ -69,7 +69,7 @@
 考虑标准LLM的计算过程（Touvron等，2023a），第l层解码器在预填充阶段的计算可描述为：
 
 $$
- S_{P}^{l+1} = \text{FFN}(\text{MHA}(S_P^l, S_P^l, S_P^l)),
+S_{P}^{l+1} = \text{FFN}(\text{MHA}(S_P^l, S_P^l, S_P^l)),
 $$
 
 其中 $S_P^l = S_I^l \cup S_T^l$，$\text{MHA}(\cdot, \cdot, \cdot)$ 表示第l层解码器的多头注意力机制，$\text{FFN}(\cdot)$ 表示前馈网络（Vaswani，2017）。
@@ -463,3 +463,18 @@ $R = \left| \frac{\sum M_I}{|S_I^l|} - r_I \right|*F + \begin{cases} \left| \fra
 ## 结论
 
  本文提出了一种动态视觉-语言上下文稀疏化框架，称为Dynamic-LLaVA。该框架针对多模态大型模型的推理模式设计了定制的稀疏化推理策略，并能够以端到端的方式集成到MLLMs的训练中。
+
+
+<script type="text/javascript" async  
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">  
+</script>  
+
+<script type="text/x-mathjax-config">  
+    MathJax.Hub.Config({  
+    tex2jax: {  
+        inlineMath: [['$','$'], ['\\(','\\)']],  
+        displayMath: [['$$','$$'], ['\\[','\\]']],  
+        processEscapes: true  
+    }  
+    });  
+</script>  
