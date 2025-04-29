@@ -8,12 +8,14 @@
 - [2023年论文](#2023)
 - [2022年论文](#2022)
 - [2021年论文](#2021)
+- [相关数据集](#相关数据集)
 
 ## 2025
 
 - **Dynamic-LLaVA: Efficient Multimodal Large Language Models via Dynamic Vision-Language Context Sparsification** (ICLR 2025)
     - [论文链接](https://arxiv.org/pdf/2412.00876)
     - [开源项目链接](https://github.com/microsoft/Dynamic-LLaVA)
+    - [解读](Papers/2025-ICLR-Dynamic-LLaVA- Efficient Multimodal Large Language Models via Dynamic Vision-Language Context Sparsification.md)
     - 创新性提出多模态大语言模型动态视觉-语言上下文稀疏化框架，通过在预填充和解码阶段动态减少视觉和语言上下文的冗余标记，显著降低计算消耗和GPU内存开销
     - 设计了针对不同推理模式的稀疏化推理方案，使用可学习的预测器为图像和输出文本标记生成二进制掩码，通过端到端训练确保模型性能不受影响
 
@@ -85,4 +87,24 @@
   - [论文链接](https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Improving_Weakly_Supervised_Visual_Grounding_by_Contrastive_Knowledge_Distillation_CVPR_2021_paper.pdf)
   - DOI: 10.1109/CVPR46437.2021.00074
   - 通过对象检测器提供的软标签进行对比学习蒸馏，无需检测器推理即可显著提升弱监督短语定位性能
+
+## 相关数据集
+
+| 数据集名称           | 类型             | 任务/用途              | 说明及特点                                                   |
+| -------------------- | ---------------- | ---------------------- | ------------------------------------------------------------ |
+| [656K Mixture Dataset](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception) | 指令微调数据集   | 多模态指令微调训练     | 用于模型训练的混合数据集，类似于LLaVA-1.5所用数据            |
+| [VQAv2](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)                | 视觉问答         | 视觉问答               | 常用视觉问答基准，测试模型对图像内容的理解和问答能力         |
+| [GQA](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)                  | 视觉问答         | 视觉问答               | 关注视觉常识推理，图像理解和复杂问题推理                     |
+| [VizWiz](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)               | 视觉问答         | 视觉问答               | 针对视力障碍者场景的问答数据集，图片质量多样且复杂           |
+| [SciQA](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)                | 专业领域视觉问答 | 视觉科学问答           | 侧重科学领域问题的视觉问答                                   |
+| [TextVQA](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)              | 视觉问答         | 包含文本识别的视觉问答 | 要求模型识别图像中的文本信息并回答相关问题                   |
+| [POPE](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)                 | 视觉问答         | 视觉问答               | 具体任务详情未给，属于视觉理解基准之一                       |
+| [MMBench (en)](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)         | 视觉理解基准     | 多模态模型综合测试     | 英文多模态模型的综合评测基准                                 |
+| [SEED (image)](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)         | 图像相关基准     | 视觉理解               | 具体内容未详细说明，属于视觉基准                             |
+| [MM-Vet](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)               | 视觉理解基准     | 视觉理解               | 具体内容未详细说明，属于视觉基准                             |
+| [MMVP](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)                 | 视觉为中心基准   | 专注于视觉理解         | 视觉为中心的视觉理解基准，用于模型视觉表现测试               |
+| [RealWorldQA](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)          | 真实世界视觉问答 | 视觉问答               | 真实世界场景下的视觉问答测试                                 |
+| [CVBench-2D](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)           | 视觉理解基准     | 视觉理解               | 2D视觉任务基准，测试模型二维视觉能力                         |
+| [LVIS-VQA (单轮/多轮)](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception) | 视觉问答         | 多轮及单轮视觉问答生成 | 基于LVIS-Instruct4V子集，测试模型对复杂交互式视觉问答的生成能力 |
+| [ShareGPT4V-VQA](https://github.com/IamZLT/KnowledgeDistillation-VisualPerception)       | 视觉问答生成     | 长文本生成视觉问答     | 基于ShareGPT4V数据集，测试单轮长文本视觉问答生成能力         |
 
