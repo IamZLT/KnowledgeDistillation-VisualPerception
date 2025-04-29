@@ -1,5 +1,17 @@
 # 2025-ICLR-Dynamic-LLaVA- Efficient Multimodal Large Language Models via Dynamic Vision-Language Context Sparsification
 
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
 ## 背景
 
 - 多模态大型语言模型虽然在视觉理解、推理和交互方面表现出色，但其推理阶段随着输出文本令牌数量增加，计算和内存消耗也呈递增趋势，尤其是在解码阶段。这种增长严重影响了MLLMs的推理效率。
@@ -465,16 +477,3 @@ $R = \left| \frac{\sum M_I}{|S_I^l|} - r_I \right|*F + \begin{cases} \left| \fra
  本文提出了一种动态视觉-语言上下文稀疏化框架，称为Dynamic-LLaVA。该框架针对多模态大型模型的推理模式设计了定制的稀疏化推理策略，并能够以端到端的方式集成到MLLMs的训练中。
 
 
-<script type="text/javascript" async  
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">  
-</script>  
-
-<script type="text/x-mathjax-config">  
-    MathJax.Hub.Config({  
-    tex2jax: {  
-        inlineMath: [['$','$'], ['\\(','\\)']],  
-        displayMath: [['$$','$$'], ['\\[','\\]']],  
-        processEscapes: true  
-    }  
-    });  
-</script>  
