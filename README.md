@@ -5,7 +5,7 @@
 
 ## 目录
 
-- [Visual Grounding 简介](#Visual Grounding 简介)
+- [Visual Grounding 简介](#visual-grounding-简介)
 - [视觉大模型结合模型轻量化技术相关研究成果](#视觉大模型结合模型轻量化技术相关研究成果)
 
 
