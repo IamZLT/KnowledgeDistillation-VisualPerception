@@ -1,16 +1,17 @@
-# Visual Grounding轻量化研究梳理
+# Visual Groundin
 
 本仓库收集了Visual Grounding领域以及其结合模型轻量化技术、视觉大模型结合模型轻量化技术的一些研究成果。论文附有官方链接或DOI，开源项目则会加入代码链接。
 
 
 ## 目录
 
-- [Visual Grounding 简介](#visual-grounding-简介)
+- [Visual-Grounding](#visual-grounding)
+- [3D-Visual-Grounding](#3D-Visual-Grounding)
 - [视觉大模型结合模型轻量化技术相关研究成果](#视觉大模型结合模型轻量化技术相关研究成果)
 
 
 
-## Visual Grounding 简介
+## Visual-Grounding
 
 本节多数内容参考自：[Towards Visual Grounding: A Survey](https://arxiv.org/pdf/2412.20206) | [项目主页](https://github.com/linhuixiao/Awesome-Visual-Grounding)
 
@@ -34,13 +35,32 @@
 
 **Generalized Visual Grounding**是2023年提出的概念，旨在克服传统视觉定位的局限性。传统视觉定位建立在一个强假设基础上：图像中必须有且仅有一个由文本描述的目标对象。这一假设在现实场景中往往不成立，因此GVG提出了更加灵活的定位范式，包括单一目标定位、多目标定位和无目标定位三种情况。这一概念也被称为泛化指代表达理解或描述目标检测，具有更强的实用价值。例如，在工程建设和交通安全领域，简单查询"无安全帽的个体"可在摄像头视频流中得到广泛应用。GVG的提出使视觉定位更加贴近实际应用需求，但也带来了更复杂的数据集需求和建模挑战。
 
-随着技术发展，视觉定位在多个**专业领域**形成了特定应用方向。例如，**遥感视觉定位**专注于卫星遥感图像，面临大尺度变化和杂乱背景等挑战。与自然场景图像不同，遥感图像由卫星获取，物体外观通常呈现相似的几何形状，需要模型考虑图像中的多尺度信息并解决预训练模型迁移中的领域差异问题。医学视觉定位旨在医学影像中定位与医学查询短语相对应的区域，是医学影像分析和放射学诊断的关键任务。医学放射学图像通常呈现平面、灰度特征，缺乏显著的物体轮廓，需要专业知识才能识别病变和生理区域，这与自然场景图像有显著差异。此外，3D视觉定位将定位任务扩展到三维空间，为虚拟现实和增强现实等应用提供支持。视频目标定位则在时间维度上扩展了视觉定位能力，适用于视频内容分析和理解。这些领域特化的应用展示了视觉定位技术的多样性和适应性。
+随着技术发展，视觉定位在多个**专业领域**形成了特定应用方向。例如，**遥感视觉定位**专注于卫星遥感图像，面临大尺度变化和杂乱背景等挑战。与自然场景图像不同，遥感图像由卫星获取，物体外观通常呈现相似的几何形状，需要模型考虑图像中的多尺度信息并解决预训练模型迁移中的领域差异问题。医学视觉定位旨在医学影像中定位与医学查询短语相对应的区域，是医学影像分析和放射学诊断的关键任务。医学放射学图像通常呈现平面、灰度特征，缺乏显著的物体轮廓，需要专业知识才能识别病变和生理区域，这与自然场景图像有显著差异。此外，**3D视觉定位将定位任务扩展到三维空间**，为虚拟现实和增强现实等应用提供支持。视频目标定位则在时间维度上扩展了视觉定位能力，适用于视频内容分析和理解。这些领域特化的应用展示了视觉定位技术的多样性和适应性。
 
 **视觉定位与其他视觉语言任务的结合形成了多样化的多任务学习框架**。将REC与指代表达生成(REG)结合可实现循环一致性学习，增强模型的鲁棒性；REC与指代表达分割(RES)的结合则提供了更精细的定位能力，从矩形边界框扩展到不规则掩码区域；与图像描述(Image Captioning)结合则增强了模型对视觉内容的语义理解能力。这些多任务设置不仅提高了视觉定位的性能，也促进了相关任务的协同发展。
 
 此外，视觉定位还衍生出一些具有特殊应用价值的任务形式，如Grounded Object Detection和Referring Counting。Grounded Object Detection将单模态检测任务与多模态框架结合，显著增强了模型感知广泛开放和多样化对象的能力。Referring Counting将计数任务与定位任务结合，比传统计数任务更具实用性，能够区分用户所需的特定信息。
 
 综上所述，视觉定位通过多种任务类型展示了其在视觉理解领域的基础地位和广泛应用价值。随着技术不断发展，视觉定位任务类型将进一步丰富和完善，为多模态人工智能领域提供更强大的支持。
+
+### 2022
+
+- **Grounded Language-Image Pre-training** (CVPR 2022)
+  - [论文链接](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Grounded_Language-Image_Pre-Training_CVPR_2022_paper.pdf) ｜ [开源项目链接](https://github.com/microsoft/GLIP) ｜ [论文解读](Papers/2025-ICLR-Dynamic-LLaVA-%20Efficient%20Multimodal%20Large%20Language%20Models%20via%20Dynamic%20Vision-Language%20Context%20Sparsification.md)
+  - 创新性提出多模态大语言模型动态视觉-语言上下文稀疏化框架，通过在预填充和解码阶段动态减少视觉和语言上下文的冗余标记，显著降低计算消耗和GPU内存开销
+  - 设计了针对不同推理模式的稀疏化推理方案，使用可学习的预测器为图像和输出文本标记生成二进制掩码，通过端到端训练确保模型性能不受影响
+
+## 3D-Visual-Grounding
+
+**3D Visual Grounding** 是计算机视觉和自然语言处理领域的一个研究方向，它的目标是：**给定一段自然语言描述，在三维空间（通常是3D点云或3D模型）中，自动定位出所描述的具体目标或区域。**
+
+### 2025
+
+- **Text-guided Sparse Voxel Pruning for Efficient 3D Visual Grounding** (CVPR 2025)
+  - [论文链接](https://openaccess.thecvf.com/content/CVPR2025/papers/Guo_Text-guided_Sparse_Voxel_Pruning_for_Efficient_3D_Visual_Grounding_CVPR_2025_paper.pdf) ｜ [开源项目链接](https://github.com/GWxuan/TSP3D) ｜ [论文解读](Papers/2025-ICLR-Dynamic-LLaVA-%20Efficient%20Multimodal%20Large%20Language%20Models%20via%20Dynamic%20Vision-Language%20Context%20Sparsification.md)
+  - 这篇论文提出了一种名为GLIP（Grounded Language-Image Pre-training）的视觉预训练模型，旨在同时学习具备语言理解能力的对象级视觉表示。作者通过将目标检测任务和短语定位任务进行统一建模，使模型不仅能够识别图像中的目标，还能理解文本短语与图像区域之间的语义对应关系。GLIP通过构建一个联合的图像-文本编码框架，实现了视觉特征和语言特征的深度融合，从而显著增强了模型的语义理解能力。该模型在大规模数据集上进行预训练，包括人工标注和从网络爬取的图文对，通过自训练方式自动生成定位框，实现了高效的数据扩展。在实验中，GLIP在COCO、LVIS等标准数据集上展现出优异的零样本和少样本迁移能力，并在13个实际应用场景下取得了与监督模型相当甚至更优的性能，验证了其强大的通用性和部署灵活性。这项研究展示了多模态预训练在视觉理解中的巨大潜力，为构建更泛化、低成本的目标检测系统提供了新路径。
+
+
 
 ## 视觉大模型结合模型轻量化技术相关研究成果
 
@@ -49,8 +69,7 @@
 - **Dynamic-LLaVA: Efficient Multimodal Large Language Models via Dynamic Vision-Language Context Sparsification** (ICLR 2025)
 
   - [论文链接](https://arxiv.org/pdf/2412.00876) ｜ [开源项目链接](https://github.com/microsoft/Dynamic-LLaVA) ｜ [论文解读](Papers/2025-ICLR-Dynamic-LLaVA-%20Efficient%20Multimodal%20Large%20Language%20Models%20via%20Dynamic%20Vision-Language%20Context%20Sparsification.md)
-  - 创新性提出多模态大语言模型动态视觉-语言上下文稀疏化框架，通过在预填充和解码阶段动态减少视觉和语言上下文的冗余标记，显著降低计算消耗和GPU内存开销
-  - 设计了针对不同推理模式的稀疏化推理方案，使用可学习的预测器为图像和输出文本标记生成二进制掩码，通过端到端训练确保模型性能不受影响
+  - 这篇论文提出了一种名为 TSP3D 的高效单阶段 3D 视觉定位方法，旨在在自然语言引导下从点云中快速准确地定位目标物体。与以往基于点云或两阶段的方法不同，TSP3D 首次在该任务中引入了稀疏卷积多层架构，并设计了两个关键机制：文本引导剪枝（TGP）用于根据语言信息逐步删除无关体素，从而高效实现多模态特征交互；以及基于补全的加和（CBA）用于在目标信息被误删时自适应补全重要区域。实验表明，TSP3D 在多个基准数据集上同时实现了最优的准确率与最快的推理速度，显著提升了3D视觉定位任务的实用性与效率。
 - **Align-KD: Distilling Cross-Modal Alignment Knowledge for Mobile VLM** (CVPR 2025)
 
   - [论文链接](https://cvpr.thecvf.com/virtual/2025/poster/33163) ｜ [开源项目链接](https://github.com/microsoft/Align-KD) ｜ [论文解读](Papers/2025-CVPR-Align-KD-%20Distilling%20Cross-Modal%20Alignment%20Knowledge%20for%20Mobile%20VLM.md)
