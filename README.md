@@ -60,7 +60,13 @@
   - [论文链接](https://openaccess.thecvf.com/content/CVPR2025/papers/Guo_Text-guided_Sparse_Voxel_Pruning_for_Efficient_3D_Visual_Grounding_CVPR_2025_paper.pdf) ｜ [开源项目链接](https://github.com/GWxuan/TSP3D) ｜ [论文解读](Papers/2025-ICLR-Dynamic-LLaVA-%20Efficient%20Multimodal%20Large%20Language%20Models%20via%20Dynamic%20Vision-Language%20Context%20Sparsification.md)
   - 这篇论文提出了一种名为GLIP（Grounded Language-Image Pre-training）的视觉预训练模型，旨在同时学习具备语言理解能力的对象级视觉表示。作者通过将目标检测任务和短语定位任务进行统一建模，使模型不仅能够识别图像中的目标，还能理解文本短语与图像区域之间的语义对应关系。GLIP通过构建一个联合的图像-文本编码框架，实现了视觉特征和语言特征的深度融合，从而显著增强了模型的语义理解能力。该模型在大规模数据集上进行预训练，包括人工标注和从网络爬取的图文对，通过自训练方式自动生成定位框，实现了高效的数据扩展。在实验中，GLIP在COCO、LVIS等标准数据集上展现出优异的零样本和少样本迁移能力，并在13个实际应用场景下取得了与监督模型相当甚至更优的性能，验证了其强大的通用性和部署灵活性。这项研究展示了多模态预训练在视觉理解中的巨大潜力，为构建更泛化、低成本的目标检测系统提供了新路径。
 
+### 数据集
 
+|   数据集   | 描述                                                         | 评估指标             |                      下载链接                      |
+| :--------: | :----------------------------------------------------------- | -------------------- | :------------------------------------------------: |
+| ScanNet v2 | ScanNet 点云数据是由 [ScanNet](http://www.scan-net.org/) 项目采集、处理和发布的一种丰富的3D场景数据格式。ScanNet 是计算机视觉、机器人等领域中著名的室内大规模三维重建与理解数据集之一。下面是关于 ScanNet 点云数据的详细介绍 | /                    | [ScanNet 提示](https://github.com/ScanNet/ScanNet) |
+| ScanRefer  | 基于 ScanNet 框架，包含 51,583 个场景描述。                  | Acc@mIoU             |  [此处](https://github.com/daveredrum/ScanRefer)   |
+| SR3D/NR3D  | ReferIt3D 分为 Nr3D（41,503 个人工生成的描述）和 Sr3D（83,572 个合成表达式）。ReferIt3D 通过为每个对象提供分割的点云来简化任务。 | 目标对象选择的准确率 |   [此处](https://github.com/referit3d/referit3d)   |
 
 ## 视觉大模型结合模型轻量化技术相关研究成果
 

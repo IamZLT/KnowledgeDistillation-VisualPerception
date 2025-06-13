@@ -196,3 +196,16 @@ $$
 L_{total} = \lambda_1 L_{pruning} + \lambda_2 L_{com} + \lambda_3 L_{class} + \lambda_4 L_{bbox}
 $$
 其中 $\lambda_1$，$\lambda_2$，$\lambda_3$ 和 $\lambda_4$ 是不同部分的权重。
+
+## 4. Experiments
+
+
+
+此论文使用了ScanRefer和SR3D/NR3D数据集。
+
+以下是这些数据集的表格介绍：
+
+| 数据集    | 描述                                                         | 评估指标             |
+| --------- | ------------------------------------------------------------ | -------------------- |
+| ScanRefer | 基于 ScanNet 框架，包含 51,583 个场景描述。                  | Acc@mIoU             |
+| SR3D/NR3D | ReferIt3D 分为 Nr3D（41,503 个人工生成的描述）和 Sr3D（83,572 个合成表达式）。ReferIt3D 通过为每个对象提供分割的点云来简化任务。 | 目标对象选择的准确率 |
